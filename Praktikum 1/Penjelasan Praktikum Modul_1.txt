@@ -1,0 +1,34 @@
+Penjelasan Praktikum Modul_1
+
+Nama: Salsabila Rahmadina
+Nama Anggota Kelompok: Edliza Belvaedria Annoor, Muhammad Arkan Farrel Rizky
+NIM: 707012400067
+Kelas: D4SIKC-4801
+Kelompok: 3
+
+Soal 1: Modifikasi Output
+Program melakukan perulangan dari i = 0 sampai kurang dari 10.
+Setiap perulangan, program mencetak "Sekarang Tanggal" diikuti dengan nilai i + 18.
+Hasilnya adalah tanggal 18 sampai 27 (10 baris).
+
+Soal 2: Fungsi go()
+Fungsi ini mencari selisih terbesar antara faktor-faktor berurutan dari suatu bilangan.
+Contoh: go(30)
+Faktor 30 adalah 1, 2, 3, 5, 6, 10, 15, 30.
+Selisih terbesar ada pada 30 – 15 = 15.
+Jadi hasilnya 15.
+
+Soal 3: Fungsi panas() dan dingin()
+panas(x) → menghitung jumlah digit dari bilangan.
+dingin(x, y) → mencari kelipatan y yang jumlah digitnya sama dengan x.
+Contoh:
+dingin(10, 7) → mencari kelipatan 7 yang jumlah digitnya = 10.
+dingin(2, 35) → mencari kelipatan 35 yang jumlah digitnya = 2.
+
+Soal 4: Kalkulator Basis
+Program membaca basis B dan string Y, lalu menghitung jumlah kemungkinan cara membaca string Y agar sesuai dengan aturan basis tersebut.
+Masalahnya: untuk digit ≥ 10, program tetap membaca sebagai angka desimal, bukan huruf (A, B, C, …).
+Akibatnya, string bisa dipecah dengan berbagai cara.
+Contoh: Basis 16 dengan input "114240" bisa dibaca sebagai:
+[1][1][4][2][4][0]
+[1][14][2][4][0].
