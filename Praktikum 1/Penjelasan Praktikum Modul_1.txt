@@ -12,11 +12,18 @@ Setiap perulangan, program mencetak "Sekarang Tanggal" diikuti dengan nilai i + 
 Hasilnya adalah tanggal 18 sampai 27 (10 baris).
 
 Soal 2: Fungsi go()
-Fungsi ini mencari selisih terbesar antara faktor-faktor berurutan dari suatu bilangan.
+a. Fungsi ini mencari selisih terbesar antara faktor-faktor berurutan dari suatu bilangan.
 Contoh: go(30)
 Faktor 30 adalah 1, 2, 3, 5, 6, 10, 15, 30.
 Selisih terbesar ada pada 30 – 15 = 15.
 Jadi hasilnya 15.
+
+b. BENAR
+Fungsi go(n) mencari selisih maksimum antar faktor berurutan dari n.
+Salah satu selisih pasti adalah n - f_prev (faktor terakhir sebelum n).
+Faktor itu berbentuk n/k dengan k ≥ 2, sehingga f_prev ≤ n/2.
+Maka n - f_prev ≥ n/2.
+Karena go(n) memilih selisih terbesar, jelas go(n) ≥ n/2
 
 Soal 3: Fungsi panas() dan dingin()
 panas(x) → menghitung jumlah digit dari bilangan.
