@@ -1,0 +1,49 @@
+Penjelasan Praktikum Dasar Pemprograman Perangakat Bergerak (DPPB)
+
+Nama	: Salsabila Rahmadina
+Nim	: 707012400067
+Kelas	: D4SIKC-48-01
+
+1a. Jalankan kode tersebut, kemudian jelaskan apa yang terjadi!
+- Program ini membuat list [1, 2, 3]. Fungsi assert digunakan untuk mengecek kondisi saat runtime, contoh memastikan panjang list sesuai (length == 3) dan nilai elemen bernilai true.Jika true program lanjut, tetapi jika false makan program error. Jadi outputnya akan berurutan:
+1. 3 = panjang list
+2. 2 = nilai list sebelum diubah
+3. 1 = nilai list setelah diubah
+
+1b. Ubah variabel menjadi final dan ukuran 4 diawal null!
+Variabel list diubah menjadi final dengan ukuran 4 dan isi awal null, sehingga list awalnya [null, null, null, null].
+Kemudian, pada indeks ke-1 diisi dengan nama dan pada indeks ke-2 diisi dengan NIM, sehingga list berubah menjadi [null, "Salsabila Rahmadina", "707012400067", null].
+Tidak terjadi error karena final hanya melarang penggantian list dengan list baru, tetapi isi elemennya masih bisa diubah.
+
+2a. Menjelaskan Code No 2a
+pada kodingan ini membuat set yang berisi nama prodi, karena set tidak boleh duplikat harus unik. Jadi, item "Sistem Infomasi" hanya tersimpan sekali. jadi outputnya:
+{Sistem Informasi, Sistem Informasi Kota Cerdas, Teknologi Rekayasa Multimedia}
+
+2c. Menulis Set<String> prodiSet = prodi; hanya menegaskan tipe data, tanpa mengubah isi.
+
+2d. Dengan .add() ditambahkan satu elemen (nama), dan dengan .addAll() ditambahkan beberapa elemen sekaligus (kelas dan NIM). Hasilnya, Set berisi data prodi ditambah nama, kelas, dan NIM, tanpa duplikat dan urutan elemen tidak dijamin tetap
+
+3a.Penjelasan kode no 3a
+Program ini membuat dua Map, yaitu identitas untuk menyimpan data diri dan kampus untuk menyimpan informasi kampus, lalu mencetak isinya sebagai pasangan key–value.
+
+3c. Penjelasan: Map mhs1 dan mhs2 berhasil dibuat dan dimodifikasi.Tidak terjadi error karena tipe key dan value sudah konsisten. Output: Map berisi data baru sesuai assignment.
+
+3d. Elemen baru berhasil ditambahkan ke Map. Map dapat diubah dengan assignment key baru.
+
+4a. Setelah dijalankan, list1 berisi [1, 2, 3], list2 berisi [0, 1, 2, 3], panjang list2 adalah 4.
+4b. Menambahkan kode sesuai instruksi soal:
+     List<int?> list_1 = list1;
+     list_1 = [2, 1, null];
+     print(list_1);
+     var list3 = [0, ...?list_1];
+     print(list3);
+     print(list3.length);
+4c. Jika terjadi error, biasanya karena spread operator digunakan pada list yang bertipe non-nullable. Dengan ...? (null-aware spread), error tidak terjadi.
+4d. Menambahkan variabel list berisi NIM dengan elemen terpisah.
+ 
+5a. Setelah dijalankan, antrean berisi ['Budi', 'Ani', 'Citra'], lalu bertambah 'Dewi' di belakang dan 'Eko' di depan.
+5b. Tidak terjadi error, antrean setelah penambahan: ['Eko', 'Budi', 'Ani', 'Citra', 'Dewi'].
+5c. Konsep FIFO: elemen pertama yang masuk akan keluar pertama saat removeFirst().
+5d. Tambahkan antrean NIM, tampilkan, lalu keluarkan satu per satu dengan while.
+
+6. kode ini digunakan untuk mencari panjang subsekuensi terpanjang yang terdiri dari huruf H, E, dan I secara bergantian (tidak boleh huruf sama berulang), dengan minimal panjang 3. Fungsi isHEI memastikan hanya huruf H, E, dan I yang diproses. Lalu, dalam longestBeautifulHEI, dibuat kemungkinan pasangan awal seperti HE, HI, EH, dst. Program akan menelusuri string input, mengecek apakah urutan huruf sesuai pola, dan menghitung panjangnya. Jika ada urutan valid lebih panjang dari sebelumnya, disimpan sebagai best. Hasil akhir mengembalikan panjang urutan terpanjang, atau -1 jika tidak ada yang memenuhi. Contohnya, "HEI" menghasilkan 3, "HHH" menghasilkan -1, dan "HEIHEI" menghasilkan 6.
