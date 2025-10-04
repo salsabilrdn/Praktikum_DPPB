@@ -1,6 +1,6 @@
 void main() {
   var identitas = {
-    'Nama': 'Nama Saidara',
+    'Nama': 'Salsabila Rahmadina',
     'NIM': '707012400067',
     'Kelas': 'SIKC48-01'
   };
