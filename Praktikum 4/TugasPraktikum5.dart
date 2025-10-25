@@ -1,3 +1,5 @@
+// Implementasi: Tebas Tebang Pohon dengan OOP + binary search.
+
 import 'dart:io';
 
 // Enkapsulasi: setiap Tree menyimpan tinggi secara private.

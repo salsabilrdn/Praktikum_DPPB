@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Dart in Terminal",
+      "type": "dart",
+      "request": "launch",
+      "console": "terminal"
+    }
+  ]
+}
