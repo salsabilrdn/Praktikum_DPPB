@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
+import 'pages/profile_page.dart';
+import 'pages/settings_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,54 +13,55 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Contoh Navigasi (Pindah Halaman)',
+      title: 'Tugas Praktikum Navigasi',
+      // 🔵 THEME NAVY (ganti teal ke navy)
+      theme: ThemeData(
+        colorSchemeSeed: const Color(0xFF0A2647), // NAVY
+        useMaterial3: true,
+      ),
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const FirstPage(),
-        '/second': (context) => const SecondPage(),
+        '/': (context) => const MainScreen(),
+        '/profile': (context) => const ProfilePage(),
+        '/settings': (context) => const SettingsPage(),
       },
     );
   }
 }
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
+// 🔵 LAYOUT TAB BAR NAVY
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Halaman Pertama'),
-        backgroundColor: Colors.blue,
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/second');
-          },
-          child: const Text('Pergi ke Halaman Kedua'),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Aplikasi Navigasi Flutter'),
+          backgroundColor: const Color(0xFF0A2647), // NAVY dark
+          foregroundColor: Colors.white,
+
+          bottom: const TabBar(
+            labelColor: Colors.white,
+            unselectedLabelColor: Color(0xFF7EA6D4), // biru muda
+            indicatorColor: Colors.white,
+            tabs: [
+              Tab(icon: Icon(Icons.home), text: 'Home'),
+              Tab(icon: Icon(Icons.person), text: 'Profil'),
+              Tab(icon: Icon(Icons.settings), text: 'Settings'),
+            ],
+          ),
         ),
-      ),
-    );
-  }
-}
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Halaman Kedua'),
-        backgroundColor: Colors.blue,
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Kembali'),
+        body: const TabBarView(
+          children: [
+            HomePageContent(),
+            ProfilePage(),
+            SettingsPage(),
+          ],
         ),
       ),
     );
