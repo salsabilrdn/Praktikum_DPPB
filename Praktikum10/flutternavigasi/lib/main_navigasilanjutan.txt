@@ -1,0 +1,137 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Contoh Navigasi Lanjutan',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/pantai': (context) => const MenuPage(
+            menuTitle: 'Pantai', icon: Icons.beach_access),
+        '/gunung': (context) => const MenuPage(
+            menuTitle: 'Gunung', icon: Icons.terrain),
+        '/budaya': (context) => const MenuPage(
+            menuTitle: 'Budaya', icon: Icons.museum),
+        '/kuliner': (context) => const MenuPage(
+            menuTitle: 'Kuliner', icon: Icons.restaurant),
+      },
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Beranda'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: GridView.count(
+            crossAxisCount: 2,
+            crossAxisSpacing: 20.0,
+            mainAxisSpacing: 20.0,
+            padding: const EdgeInsets.all(20.0),
+            children: <Widget>[
+              // Tombol 1: Pantai
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/pantai');
+                },
+                icon: const Icon(Icons.beach_access, size: 40),
+                label: const Text('Pantai', style: TextStyle(fontSize: 16)),
+              ),
+
+              // Tombol 2: Gunung
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/gunung');
+                },
+                icon: const Icon(Icons.terrain, size: 40),
+                label: const Text('Gunung', style: TextStyle(fontSize: 16)),
+              ),
+
+              // Tombol 3: Budaya
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/budaya');
+                },
+                icon: const Icon(Icons.museum, size: 40),
+                label: const Text('Budaya', style: TextStyle(fontSize: 16)),
+              ),
+
+              // Tombol 4: Kuliner
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/kuliner');
+                },
+                icon: const Icon(Icons.restaurant, size: 40),
+                label: const Text('Kuliner', style: TextStyle(fontSize: 16)),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MenuPage extends StatelessWidget {
+  // Variabel untuk menerima data dari rute
+  final String menuTitle;
+  final IconData icon;
+
+  // Constructor wajib menerima data
+  const MenuPage({
+    super.key,
+    required this.menuTitle,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(menuTitle), // Menampilkan judul yang dikirim
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              icon, // Menampilkan ikon yang dikirim
+              size: 100,
+              color: Colors.blue,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Anda berada di halaman $menuTitle',
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context); // Kembali ke halaman sebelumnya (HomePage)
+              },
+              child: const Text('Kembali'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
